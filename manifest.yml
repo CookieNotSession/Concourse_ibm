@@ -3,7 +3,7 @@ applications:
 - instances: 1
   timeout: 180
   name: twewcweightloss2018
-  buildpack: java_buildpack_offline
+  buildpack: java_buildpack
   path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
   memory: 1G
   #domain: mybluemix.net
