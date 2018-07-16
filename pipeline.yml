@@ -14,7 +14,7 @@ resources:
     organization: fet4IBM
     space: sit-sapce
     skip_cert_check: true
-    buildpack: java_buildpack
+    
 
 jobs:
 - name: job-hello-world
@@ -27,6 +27,7 @@ jobs:
   - put: cloudfoundry
     params:
       manifest: resource-tutorial/manifest.yml
-      path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
+      buildpack: java_buildpack
+      #path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
 
 
