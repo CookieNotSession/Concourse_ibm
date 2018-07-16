@@ -3,7 +3,7 @@ resources:
 - name: resource-tutorial
   type: git
   source:
-    uri: https://github.com/CookieNotSession/ci.git
+    uri: https://github.com/CookieNotSession/twewcweightloss2018.git
     branch: master
 - name: cloudfoundry
   type: cf
