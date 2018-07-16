@@ -14,6 +14,7 @@ resources:
     organization: fet4IBM
     space: sit-sapce
     skip_cert_check: true
+    buildpack: java_buildpack
 
 jobs:
 - name: job-hello-world
