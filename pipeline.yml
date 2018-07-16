@@ -27,7 +27,7 @@ jobs:
   - put: cloudfoundry
     params:
       manifest: resource-tutorial/manifest.yml
-      buildpack: java_buildpack
+
       #path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
 
 
