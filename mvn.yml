@@ -9,7 +9,8 @@ inputs:
 - name: repo
 
 run:
-  path: repo/mvn/mvn.sh
+  path: echo
+  args: [hiii]
 
 
 
