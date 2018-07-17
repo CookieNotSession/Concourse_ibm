@@ -27,10 +27,10 @@ jobs:
 - name: deploy-web
   public: true
   plan:
-  - get: source-code
+  - get: resource-tutorial
     trigger: true
   - task: cfpush
-    file: resource-tutorial/pfpush.yml
+    file: resource-tutorial/cfpush.yml
   - put: cloudfoundry
     params:
       manifest: resource-tutorial/manifest.yml
