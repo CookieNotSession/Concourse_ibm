@@ -7,7 +7,6 @@ image_resource:
 run:
   path: sh
   args: 
-  - cd twewcweightloss2018
   - cfpush
 
 
