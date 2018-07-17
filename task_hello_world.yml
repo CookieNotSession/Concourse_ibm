@@ -10,7 +10,8 @@ run:
   args: 
   - -exc
   - |
-    sudo apt-get install maven
+    cd resource-tutorial
+    
 
 
 
