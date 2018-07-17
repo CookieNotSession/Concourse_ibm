@@ -5,9 +5,11 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
+inputs:
+- name: repo
+
 run:
-  path: echo
-  args: [hi]
+  path: repo/mvn/mvn.sh
 
 
 
