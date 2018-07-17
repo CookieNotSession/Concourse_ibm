@@ -17,7 +17,7 @@ resources:
     
 
 jobs:
-- name: job-hello-world
+- name: maven install
   public: true
   plan:
   - get: resource-tutorial
