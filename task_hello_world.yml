@@ -6,8 +6,8 @@ image_resource:
   source: {repository: busybox}
 
 run:
-  path: mvn
-  args: clean install
+  path: sh
+  args: ls
 
 
 
