@@ -8,8 +8,8 @@ image_resource:
 input: resource-tutorial
 
 run:
-  path: resource-tutorial/mvn/mvn.sh
-
+  path: echo
+  args: [hey]
 
 
 
