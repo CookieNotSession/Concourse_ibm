@@ -6,8 +6,8 @@ image_resource:
   source: {repository: busybox}
 
 run:
-  path: echo
-  args: [hiii]
+  path: resource-tutorial/mvn/mvn.sh
+
 
 
 
