@@ -5,8 +5,11 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
+inputs:
+- name: cloudfoundry
+
 run:
-  path: cfpush/cfpush.sh
+  path: cloudfoundry/cfpush.sh
 
 
 
