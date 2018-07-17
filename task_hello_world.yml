@@ -10,7 +10,7 @@ run:
   args: 
   - -exc
   - |
-    ls
+    mvn clean install
 
 
 
