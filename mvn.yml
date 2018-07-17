@@ -5,6 +5,8 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
+input: resource-tutorial
+
 run:
   path: resource-tutorial/mvn/mvn.sh
 

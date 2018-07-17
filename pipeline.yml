@@ -2,9 +2,14 @@
 resources:
 - name: resource-tutorial
   type: git
+  check_every: 20s
   source:
     uri: https://github.com/CookieNotSession/twewcweightloss2018.git
     branch: master
+- name: my-timer
+  type: time
+  source:
+    interval: 1m
 - name: cloudfoundry
   type: cf
   source:
