@@ -3,18 +3,14 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: busybox}
+  source: {repository: ubuntu}
 
 run:
   path: sh
   args: 
   - -exc
   - |
-    export M2_HOME=/usr/local/apache-maven/apache-maven-3.3.9
-    M2=$M2_HOME/bin
-    export MAVEN_OPTS=-Xms256m -Xmx512m
-    export PATH=$M2:$PATH 
-    mvn -version
+    sudo apt-get install maven
 
 
 
