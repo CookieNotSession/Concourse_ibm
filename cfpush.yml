@@ -9,7 +9,7 @@ inputs:
 - name: repo
 
 run:
-  path: cfpush.sh
+  path: repo/cfpush.sh
 
 
 
