@@ -5,11 +5,12 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
+inputs:
+  - name: resource-tutorial
+
 run:
-  path: echo
-  args: [hey]
-
-
+  path: mvn
+  args: ["-f", "resource-tutorial/pom.xml", "-DskipTests=true", "package"]
 
 
 
