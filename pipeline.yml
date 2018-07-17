@@ -22,8 +22,8 @@ jobs:
   plan:
   - get: resource-tutorial
     trigger: true
-  - task: hello-world
-    file: resource-tutorial/task_hello_world.yml
+  - task: maven-install
+    file: resource-tutorial/mvn.yml
 #- name: deploy-web
 #  public: true
 #  plan:
