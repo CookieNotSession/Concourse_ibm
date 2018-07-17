@@ -1,18 +1,16 @@
+---
 platform: linux
 
 image_resource:
   type: docker-image
-  source:
-    repository: nitram509/alpine-oraclejdk8-maven-cmake-gcc
-    tag: latest
+  source: {repository: busybox}
 
 inputs:
   - name: resource-tutorial
 
-#outputs:
-#  - name: jar-file
-#    path: git-repo/target/
-
 run:
   path: mvn
-  args: ["-f", "resource-tutorial/pom.xml", "-DskipTests=true", "package"]
+  args: ["install"]
+
+
+
