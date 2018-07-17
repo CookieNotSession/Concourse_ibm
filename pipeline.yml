@@ -34,6 +34,6 @@ jobs:
     params:
       manifest: resource-tutorial/manifest.yml
       buildpack: java_buildpack_offline
-      #path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
+      path: resource-tutorial/target/twewcweightloss2018-1.0-SNAPSHOT.jar
 
 
