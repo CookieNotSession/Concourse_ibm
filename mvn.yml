@@ -6,7 +6,7 @@ image_resource:
   source: {repository: maven}
 
 inputs:
-- name: twewcweightloss2018
+- name: resource-tutorial/twewcweightloss2018
 
 run:
   path: sh
