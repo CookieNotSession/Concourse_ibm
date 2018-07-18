@@ -13,5 +13,5 @@ run:
   args:
   - -exc
   - |
-    cd ./twewcweightloss2018
+    cd ./mvn
     mvn install
