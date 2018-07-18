@@ -14,4 +14,4 @@ run:
   - -exc
   - |
     cd ./resource-tutorial
-    ls -alR
+    mvn install
