@@ -6,10 +6,6 @@ resources:
   source:
     uri: https://github.com/CookieNotSession/twewcweightloss2018.git
     branch: master
-- name: my-timer
-  type: time
-  source:
-    interval: 1m
 - name: cloudfoundry
   type: cf
   source:
@@ -39,6 +35,12 @@ jobs:
     params:
       manifest: resource-tutorial/manifest.yml
       buildpack: java_buildpack_offline
-      path: resource-tutorial/target/twewcweightloss2018-1.0-SNAPSHOT.jar
-
+#      path: resource-tutorial/target/twewcweightloss2018-1.0-SNAPSHOT.jar
+#- name: cfpush
+#  public: true
+#  plan:
+#  - get: resource-tutorial
+#    trigger: true
+#  - task: cfpush
+#    file: resource-tutorial/cfpush.yml
 
