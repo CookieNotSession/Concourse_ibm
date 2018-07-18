@@ -6,11 +6,10 @@ image_resource:
   source: {repository: busybox}
 
 inputs:
-  - name: resource-tutorial
+- name: some-important-input
 
 run:
-  path: mvn
-  args: ["install"]
-
+  path: ls
+  args: ['-alR']
 
 
