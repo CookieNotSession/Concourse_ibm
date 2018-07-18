@@ -8,6 +8,9 @@ image_resource:
 inputs:
 - name: resource-tutorial
 
+outputs:
+- name: resource-tutorial
+
 run:
   path: sh
   args:
