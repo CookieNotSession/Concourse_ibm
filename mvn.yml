@@ -6,11 +6,7 @@ image_resource:
   source: {repository: maven}
 
 inputs:
-#- name: resource-tutorial
-- name: ./resource-tutorial
-
-outputs:
-- name: target
+- name: resource-tutorial
 
 run:
   path: sh
@@ -19,3 +15,6 @@ run:
   - |
     cd ./resource-tutorial
     mvn install
+    
+outputs:
+- name: target

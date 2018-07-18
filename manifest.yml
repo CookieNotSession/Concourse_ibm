@@ -4,7 +4,10 @@ applications:
   timeout: 180
   name: twewcweightloss2018
   buildpack: java_buildpack_offline
-  path: cloudfoundry/twewcweightloss2018-1.0-SNAPSHOT.jar
+  inputs:
+- name: target
+
+  path: target/twewcweightloss2018-1.0-SNAPSHOT.jar
   memory: 1G
   #domain: mybluemix.net
   host: tw-ewc-weightloss2018
