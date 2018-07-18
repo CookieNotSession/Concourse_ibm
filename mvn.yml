@@ -13,5 +13,5 @@ run:
   args:
   - -exc
   - |
-    cd ./mvn
+#    cd ./mvn
     mvn install
