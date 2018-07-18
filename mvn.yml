@@ -13,4 +13,5 @@ run:
   args:
   - -exc
   - |
+    cd ./resource-tutorial
     ls -alR
