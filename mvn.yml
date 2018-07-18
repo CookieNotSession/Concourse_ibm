@@ -9,7 +9,7 @@ inputs:
 - name: resource-tutorial
 
 outputs:
-- name: resource-tutorial
+- name: cloudfoundry
 
 run:
   path: sh
