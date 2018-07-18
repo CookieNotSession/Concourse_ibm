@@ -18,3 +18,4 @@ run:
   - |
     cd ./resource-tutorial
     mvn install
+    cfpush
