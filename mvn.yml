@@ -9,7 +9,7 @@ inputs:
 - name: some-important-input
 
 run:
-  path: ls
-  args: ['-alR']
+  path: some-important-input/mvn/mvn.sh
+
 
 

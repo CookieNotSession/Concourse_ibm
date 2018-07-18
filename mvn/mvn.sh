@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd repo
-
-./mvnw -v
+cd some-important-input
+mvn clean install
 
