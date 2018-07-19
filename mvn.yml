@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: repository: node, tag: "7.5.0"}
+  source: {repository: node, tag: "7.5.0"}
 
 inputs:
 - name: resource-tutorial
