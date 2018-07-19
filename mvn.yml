@@ -17,5 +17,5 @@ run:
   - -exc
   - |
     cd ./resource-tutorial
-    mvn install
+    mvn clean package
     ls -alR

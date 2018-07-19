@@ -31,6 +31,7 @@ jobs:
 #  - get: resource-tutorial
 #    trigger: true
 #  - task: cfpush
+  - put: target-web
   - put: cloudfoundry
     params:
       manifest: resource-tutorial/manifest.yml
