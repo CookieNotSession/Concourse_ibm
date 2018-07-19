@@ -19,4 +19,4 @@ run:
     cd ./resource-tutorial
     mvn clean package
     ls -alR
-    cp ./target/twewcweightloss2018-1.0-SNAPSHOT.jar*.jar ../target-web/concourse-demo-web.jar
+    cp ./target/twewcweightloss2018-1.0-SNAPSHOT*.jar ../target-web/concourse-demo-web.jar
