@@ -9,9 +9,5 @@ inputs:
 - name: resource-tutorial
 
 run:
-  path: sh
-  args:
-  - -exc
-  - |
-    cd ./resource-tutorial
-    cf push
+  path: echo
+  args: [good!]
