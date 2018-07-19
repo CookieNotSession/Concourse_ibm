@@ -14,4 +14,4 @@ outputs:
 - name: target-web
 
 run:
-  path: resource-tutorial/mvn.yml
+  path: resource-tutorial/cfpush.yml
