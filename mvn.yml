@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: busybox}
+  source: {repository: repository: node, tag: "7.5.0"}
 
 inputs:
 - name: resource-tutorial
@@ -12,4 +12,4 @@ outputs:
 - name: target-web
 
 run:
-  path: resource-tutorial/cfpush.yml
+  path: resource-tutorial/mvn.sh
