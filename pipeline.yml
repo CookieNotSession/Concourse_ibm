@@ -15,7 +15,7 @@ resources:
     organization: fet4IBM
     space: sit-sapce
     skip_cert_check: true
-    
+
 
 jobs:
 - name: maven install
@@ -35,7 +35,7 @@ jobs:
     params:
       manifest: resource-tutorial/manifest.yml
       buildpack: java_buildpack_offline
-#      path: resource-tutorial/target/twewcweightloss2018-1.0-SNAPSHOT.jar
+      path: target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
 #- name: cfpush
 #  public: true
 #  plan:
@@ -43,4 +43,3 @@ jobs:
 #    trigger: true
 #  - task: cfpush
 #    file: resource-tutorial/cfpush.yml
-

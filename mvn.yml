@@ -3,18 +3,13 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: maven}
+  source: {repository: ubuntu}
 
 inputs:
 - name: resource-tutorial
 
-run:
-  path: sh
-  args:
-  - -exc
-  - |
-    cd ./resource-tutorial
-    mvn install
-    
 outputs:
-- name: target
+- name: target-web
+
+run:
+  path: resource-tutorial/mvn.sh
