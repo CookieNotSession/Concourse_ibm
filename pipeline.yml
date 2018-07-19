@@ -35,7 +35,7 @@ jobs:
     params:
       manifest: resource-tutorial/manifest.yml
       buildpack: java_buildpack_offline
-      file: target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
+      path: target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
 #      path:
 #- name: cfpush
 #  public: true
