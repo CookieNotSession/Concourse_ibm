@@ -11,7 +11,7 @@ resources:
   source:
     api: https://api.run.pivotal.io
     username: cookie040667@gmail.com
-    password: @Bing1103
+    password: Bing1103@
     organization: cookie040667-org
     space: development
     skip_cert_check: true
