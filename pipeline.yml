@@ -9,11 +9,11 @@ resources:
 - name: cloudfoundry
   type: cf
   source:
-    api: https://api.system.mypcf.idv.tw
-    username: allengreen
-    password: qwerty
-    organization: fet4IBM
-    space: sit-sapce
+    api: https://api.run.pivotal.io
+    username: cookie040667@gmail.com
+    password: @Bing1103
+    organization: cookie040667-org
+    space: development
     skip_cert_check: true
 
 
