@@ -5,6 +5,6 @@ applications:
   name: twewcweightloss2018
   buildpack: java_buildpack_offline
 #  path: target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
-  memory: 2G
+  memory: 1G
   #domain: mybluemix.net
   host: tw-ewc-weightloss2018
