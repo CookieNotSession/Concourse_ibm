@@ -34,7 +34,7 @@ jobs:
   - put: cloudfoundry
     params:
       manifest: resource-tutorial/manifest.yml
-      buildpack: java_buildpack_offline
+      buildpack: java_buildpack
       path: target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
 #      path:
 #- name: cfpush
