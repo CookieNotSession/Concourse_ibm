@@ -18,5 +18,5 @@ run:
   - |
     cd ./resource-tutorial
     mvn package
-#    ls -alR
+    ls -alR
     cp ./target/twewcweightloss2018-1.0-SNAPSHOT.jar ../target-web/twewcweightloss2018-1.0-SNAPSHOT.jar
