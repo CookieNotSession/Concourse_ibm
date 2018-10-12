@@ -58,4 +58,4 @@ This project was generated using:
 * ibm-java-codegen-common v3.0.1
 * generator-ibm-service-enablement v0.7.0
 * generator-ibm-cloud-enablement v^0.13.0
-* generator-ibm-java-spring v2.2.2
+
