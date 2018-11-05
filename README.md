@@ -1,61 +1,129 @@
-## Basic Web
-IBM Cloud Basic Web Starter for Spring
-
-[![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
-[![Platform](https://img.shields.io/badge/platform-java-lightgrey.svg?style=flat)](https://www.ibm.com/developerworks/learn/java/)
-
-### Table of Contents
-* [Summary](#summary)
-* [Requirements](#requirements)
-* [Configuration](#configuration)
-* [Project contents](#project-contents)
-* [Run](#run)
-
-### Summary
-
-The IBM Cloud Basic Web Starter in Java provides a starting point for creating web applications running on [Spring](https://spring.io/).
-
-To deploy this application to IBM Cloud using a toolchain click the **Create Toolchain** button.
-[![Create Toolchain](https://console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.ng.bluemix.net/devops/setup/deploy/)
-
-### Requirements
-* [Maven](https://maven.apache.org/install.html)
-* Java 8: Any compliant JVM should work.
-  * [Java 8 JDK from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-  * [Java 8 JDK from IBM (AIX, Linux, z/OS, IBM i)](http://www.ibm.com/developerworks/java/jdk/)
-
-### Configuration
-Capabilities are provided through dependencies in the pom.xml file.
-
-### Project contents
-The ports are set to the defaults of 8080 for http and 8443 for https and are exposed to the CLI in the cli-config.yml file.
-
-The project contains IBM Cloud specific files that are used to deploy the application as part of a IBM Cloud DevOps flow. The `.bluemix` directory contains files used to define the IBM Cloud toolchain and pipeline for your application. The `manifest.yml` file specifies the name of your application in IBM Cloud, the timeout value during deployment and which services to bind to.
+Concourse CI/CD Tutorial 
+===
+**Author:** Kevin Chou 
+## Concourse Pipeline UI
+### 基本pull、package與cf push的Pipeline (by Cookie)
+- ![](https://i.imgur.com/6pBNCMK.png)
+### 完整專案的Pipeline(官方)
+- ![](https://i.imgur.com/FlqybCO.png)
 
 
-Credentials are either taken from the VCAP_SERVICES environment variable that IBM Cloud provides or from environment variables passed in by the config file `src/main/resources/application-local.properties`.
+## 流程介紹:
+1.  After `$git push`  Concourse will trigger to **pull**
+![](https://i.imgur.com/i7JcJHe.png)
 
-### Run
+2.  `$mvn clean package` Using Maven to **package**
+![](https://i.imgur.com/OTPITM2.png)
 
-To build and run the application:
-1. `mvn install`
-1. `java -jar ./target/twewcweightloss2018-1.0-SNAPSHOT.jar`
 
-To run the application in Docker use the Docker file called `Dockerfile`. If you do not want to install Maven locally you can use `Dockerfile-tools` to build a container with Maven installed.
+3.  `$cf push` push the new one to **PWS/PCF**
+![](https://i.imgur.com/7GO4t7x.png)
 
-### Endpoints
 
-The application exposes the following endpoints:
-* Health endpoint: `<host>:<port>/health` e.g. http://localhost:8080/health
-* Web content: `<host>:<port>`
 
-The ports are set in the pom.xml file and exposed to the CLI in the cli-config.yml file.
+## Concourse基本架設可參考:	[Concourse Tutorial by Stark & Wayne](https://concoursetutorial.com/)
 
-### Notices
+## Why Concourse? [與其他CI/CD工具比較] :question: (https://blog.waterstrong.me/concourse-ci/) 
 
-This project was generated using:
-* generator-ibm-java v5.10.0
-* ibm-java-codegen-common v3.0.1
-* generator-ibm-service-enablement v0.7.0
-* generator-ibm-cloud-enablement v^0.13.0
+
+基本架設介紹
+---
+
+### 1. Deploy Concourse using Docker Compose:
+
+`$ wget https://concourse-ci.org/docker-compose.yml`
+`$ docker-compose up -d`
+
+### 2. 根據自己的環境點選圖案做fly install :  http://127.0.0.1:8080/
+![](https://i.imgur.com/wj8oizG.png)
+
+### 3. 將fly工具搬移到bin底下並chmod fly來添加執行權限
+`sudo mkdir -p /usr/local/bin`
+`sudo mv ~/Downloads/fly /usr/local/bin`
+`sudo chmod 0755 /usr/local/bin/fly`
+
+### 4. Concourse on Terminal
+- Concourse Login:
+`fly --target tutorial login --concourse-url http://127.0.0.1:8080`
+
+- Execute yaml:
+`fly -t tutorial execute -c task_ubuntu_uname.yml`
+
+- Push Pipeline to Concouse:
+`fly -t tutorial set-pipeline -c pipeline.yml -p hello-world`
+
+- Unpause Pipeline or job:
+`fly -t tutorial unpause-pipeline -p hello-world`
+`fly -t tutorial unpause-job --job hello-world/job-hello-world`
+
+### 5. Concourse三大核心概念
+- Resource: 提前定義跑某些任務的資源 (github、、s3、發slack、email等這樣的一些input)
+![](https://i.imgur.com/Y00tXlt.png)
+
+- Jobs: 如Java中的Class，去做相對應的事情
+
+- Task: 如Class裡面的Function
+---
+
+
+
+### 此Demo利用 pipeline.yml 來控制整個pipeline :alien: 
+
+![](https://i.imgur.com/09hdSbj.jpg)
+#### pipeline.yml
+![](https://i.imgur.com/jdJXKxA.png)
+:::success
+resources分為兩個部分:
+1. resource-tutorial ( type:git )
+吃 https://github.com/CookieNotSession/twewcweightloss2018.git github上的資源
+
+2. cloudfoundry ( type:cf )
+將cloudfoundry的api、帳密以及指定空間設定好即可在jobs階段自動部署
+:::
+
+:::info
+jobs也分為兩個部分:
+1. maven install
+`get`來取用`resource-tutorial`的資源
+`task`中利用`file`來連接另一個yml檔 : `mvn.yml`
+2. cloudfoundry
+`put`將包好的新版本cf push到 PWS or PCF上
+`params`取用`resource-tutorial`路徑中的manifest.yml，並從`mvn.yml`中將包好的新版本jar到`target-web`
+
+:::
+
+#### mvn.yml
+![](https://i.imgur.com/gIsRNWw.png)
+
+:::success
+1. maven image
+針對此Container利用`inputs`將git上的資源拉進來 ex. `inputs:resource-tutorial`
+2. 利用`outputs`建立新資料夾 target-web (outputs artifact)
+3. run script
+`cd ./resource-tutorial` 進入Container中的resource-tutorial中
+`mvn clean package` 進行包版動作
+`cp ./target/twewcweightloss2018-1.0-SNAPSHOT.jar ../target-web/twewcweightloss2018-1.0-SNAPSHOT.jar` 將新版的jar複製到剛剛創立的新資料夾 target-web 當中
+:::
+
+#### 設定完yml檔即可將`pipeline.yml` Push到Concourse上 :+1: 
+`fly -t tutorial set-pipeline -c pipeline.yml -p Test`
+
+#### 成功push上去後即可利用UI上的介面手動觸發或是利用command觸發
+
+
+### Warning :warning: 
+:::danger
+manifest.yml與pipeline.yml中的buildpack要去符合cf buildpacks
+對於PCF來說要改成buildpack: java_buildpack_offline
+但在PWS上卻只支援buildpack: java_buildpack
+:::
+
+### Reference :information_source: 
+
+https://concoursetutorial.com/
+https://concourse-ci.org/
+https://blog.waterstrong.me/concourse-ci/
+https://ithelp.ithome.com.tw/articles/10184547
+https://edu.csdn.net/course/play/6326
+
 
