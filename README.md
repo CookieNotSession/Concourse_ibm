@@ -70,8 +70,7 @@ IBM Internship : Concourse CI/CD
 ### 此Demo利用 pipeline.yml 來控制整個pipeline :alien: 
 
 ![](https://i.imgur.com/09hdSbj.jpg)
-#### pipeline.yml
-![](https://i.imgur.com/jdJXKxA.png)
+
 :::success
 resources分為兩個部分:
 1. resource-tutorial ( type:git )
