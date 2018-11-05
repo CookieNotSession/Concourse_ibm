@@ -1,6 +1,6 @@
-Concourse CI/CD Tutorial 
+IBM Internship : Concourse CI/CD 
 ===
-**Author:** Kevin Chou 
+**Author:** Kevin Chou (周秉楠)
 ## Concourse Pipeline UI
 ### 基本pull、package與cf push的Pipeline (by Cookie)
 - ![](https://i.imgur.com/6pBNCMK.png)
