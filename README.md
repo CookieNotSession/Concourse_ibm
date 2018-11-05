@@ -1,10 +1,10 @@
 IBM Internship : Concourse CI/CD 
 ===
-**Author:** Kevin Chou (周秉楠)
+**Author:** Cookie Chou (周秉楠)
 ## Concourse Pipeline UI
-### 基本pull、package與cf push的Pipeline (by Cookie)
+### git pull、package and cf push Pipeline (Cookie Chou)
 - ![](https://i.imgur.com/6pBNCMK.png)
-### 完整專案的Pipeline(官方)
+### CI/CD Pipeline
 - ![](https://i.imgur.com/FlqybCO.png)
 
 
