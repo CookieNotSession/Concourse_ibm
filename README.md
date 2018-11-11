@@ -4,8 +4,9 @@ IBM Internship : Concourse CI/CD
 
 Introduction 
 ---
-CI is Continuous Integration, it creates a workflow where every commit made to the codebase is tested and built, and each developer on the project is expected to commit code at least once per day.
-And CD is Continuous Delivery , it takes the principle of CI one step further: the automated build and test process is extended to every component of the application, including configuration files, database schemas, and environments.
+#### CI is Continuous Integration, it creates a workflow where every commit made to the codebase is tested and built, and each developer on the project is expected to commit code at least once per day.
+
+#### CD is Continuous Delivery , it takes the principle of CI one step further: the automated build and test process is extended to every component of the application, including configuration files, database schemas, and environments.
 
 
 ## Concourse Pipeline UI
