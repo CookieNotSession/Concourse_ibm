@@ -1,3 +1,6 @@
+[![Travis](https://img.shields.io/badge/shell-green.svg)]()
+[![Travis](https://img.shields.io/badge/Concourse-red.svg)](https://concourse-ci.org/)
+
 IBM Internship : Concourse CI/CD 
 ===
 **Author:** Cookie Chou (周秉楠)
