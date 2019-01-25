@@ -4,7 +4,7 @@
 IBM Internship : Pivotal Concourse CI/CD 
 ===
 **Author:** Cookie Chou (周秉楠)
-
+Concourse : https://pivotal.io/concourse
 Introduction 
 ---
 - CI is Continuous Integration, it creates a workflow where every commit made to the codebase is tested and built, and each developer on the project is expected to commit code at least once per day.
